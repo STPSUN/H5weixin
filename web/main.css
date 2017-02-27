@@ -1,0 +1,108 @@
+/*----------
+    初始化
+  ---------*/
+*{padding: 0;margin: 0;border:0;}
+html,body{font-family: HiraginoSans,"Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif;color: #333; }
+.clearfix:after{content: "";display: block;clear: both}
+i{display: inline-block;}
+ul,li{list-style-type: none}
+select{appearance:none; -moz-appearance:none;-webkit-appearance:none;}
+a{text-decoration: none;display: inline-block}
+/*----------
+   header
+  ---------*/
+header{font-size: 0;}
+header img{width: 100%;}
+/*----------
+   main
+  ---------*/
+body{background:#E9F7FC;}
+main,footer{width: 100%;}
+main  .main-content{width: 75%;margin: auto;}
+.step{width: 100%;padding: 15px;text-align: center;box-sizing: border-box;}
+.step1{background: url("img/icon_dotted1.png") no-repeat;background-size: 100% 100%;position: relative;padding-left: 20px;}
+.step-title{background: #009999;color: #fff;padding: 5px 10px;text-align: center;width: 140px;font-size: 16px;margin:10px auto 0 auto; }
+.step-content{line-height: 20px;height: 20px;font-size: 12px;margin: 15px 0 30px 0;color:  rgb( 102, 102, 102 );}
+.step-content span{color: #333333;font-size: 15px;height: 20px;margin-right: 10px;font-weight: 600;}
+.upload{font-size: 13px;width:80px;text-align: center;background:#DE5853;color: #fff;margin: auto;padding: 2px 0;}
+.step1-icon,.step2-icon,.rule-icon{position: absolute;width: 40px;height: 40px;background: url("img/icon_small.png") no-repeat;top: 40%;}
+.step1-icon{left: -20px;}
+.step2{background: url("img/icon_dotted2.png") no-repeat;background-size: 100% 100%;position: relative;padding-right: 20px;}
+.step2-icon{right: -20px;background-position: 0 -68px;}
+.rule-part{font-weight:bold;color: rgb( 151, 84, 47 );line-height: 20px;font-size: 12px;width: 100%;box-sizing: border-box;}
+.rule-part1-less{background: url("img/icon_dotted3.png") no-repeat;background-size: 100% 100%;padding-left: 25px;position: relative;padding-bottom: 35px;}
+.rule-part1-more{background: url("img/icon_dotted4.png") no-repeat;background-size: 100% 100%;padding-left: 25px;position: relative;}
+.rule-part span{float: left;width: 5%;}
+.rule-part p{float: right;width: 92%;}
+.rule-content{padding: 15px;min-height:60px;}
+.rule-icon{background-position: 0 -275px;height: 80px;top: 15px;left: -18px;}
+.btn-down-wrap,.btn-up-wrap{width: 100%;box-sizing: border-box;position: relative;height: 30px;}
+/*.btn-down-wrap{display: none}*/
+.btn-down,.btn-up{background: url("img/icon_small.png") no-repeat;height: 30px;line-height: 30px;
+    padding-left: 30px;color: #038C80;font-size: 14px;position: absolute;left:50%;margin-left:-13px;}
+.btn-down{background-position: left -139px;}
+.btn-up{background-position: 0 -203px}
+.rule-part2{background: url("img/icon_dotted5.png") no-repeat;background-size: 100% 100%;}
+.rule-part3{background: url("img/icon_dotted6.png") no-repeat;background-size: 100% 100%;padding-bottom: 35px;}
+.rule-hidden{display: none}
+/*----------
+   footer
+  ---------*/
+footer{margin-bottom: 50px;}
+.invitation-title{width: 100px;color:rgb( 226, 82, 81 );background: url("img/icon_small.png") no-repeat 0 -390px;height: 40px;
+    line-height: 40px;font-weight: 600;padding-left:29px;font-size: 14px;margin:40px auto 15px auto;}
+.invitation-list{width: 80%;margin: auto;color: #fff;}
+.invitation-list span{display: inline-block;width: 50%;text-align: center;height: 35px;line-height: 35px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis}
+.invitation-list .box-header{background:#A63232;font-size: 13px;}
+.invitation-list .box-content{background: #DE5853;font-size: 13px;}
+.invitation-list .box-content span{height: 30px;line-height: 30px;}
+
+/*----------
+   注册弹窗
+  ---------*/
+.PoP-wrap{width: 100%;height: 100%;background-color: rgba(0,0,0,0.8);position: fixed;top: 0;z-index: 999;display: none}
+.register-PoP{position: absolute;bottom: 10px;left: 3%;width: 94%;}
+.register-content{border-radius: 10px;background: #fff;margin-bottom: 10px}
+.register-title{width: 100%;text-align: center;color: #50CDF0;height: 50px;line-height: 50px;}
+.register-item i {width:20%;height:30px;background: url("img/register.png") no-repeat;float: left;margin:8px auto;padding:5px 0}
+.register-item input{float: left;height: 40px;line-height: 40px;margin:8px 0;padding-left: 15px;width: 70%;}
+.phone i{background-position: 15px 5px;border-right: 1px solid #ccc;}
+.code i{background-position:15px -70px;border-right: 1px solid #ccc;}
+.phone,.code{border-bottom: 1px solid #ccc;}
+.location-wrap i{background-position: 15px -141px}
+.location{width: 80%;line-height: 30px;float: left;box-sizing: border-box}
+.location select{height: 30px;margin:13px 3% 13px 0 ;padding-left: 15px;width: 47%;box-sizing: border-box;
+    border-radius: 6px;color: #666;font-size: 13px;background:url("img/icon_downup.png") no-repeat right 7px rgb( 211, 242, 251 );}
+option{background:rgb( 211, 242, 251 );}
+.code input{width: 40%;}
+.code span{display: inline-block;height: 30px;float:left;margin: 10px auto;padding: 3px 15px;line-height: 30px;background: #51CDF0;
+    color: #fff;border-radius: 5px;font-size: 13px;}
+.submit{width: 100%;background:#51CDF0;color: #fff;font-size: 18px;text-align: center;border-radius: 8px;height: 50px;line-height: 50px; }
+.close{position: absolute;top:-49px;right: 20px;display: block;width: 50px;height: 50px;background: url("img/icon_close.png") no-repeat;cursor: pointer;}
+.error{height: 50px;line-height: 50px;color: red;text-align: center;font-size: 14px;}
+
+/*----------
+   资料提交成功弹窗
+  ---------*/
+.Submit-wrap{position: absolute;bottom:50%;background: #fff;width: 90%;left: 5%;padding-top: 80px;border-radius: 7px;margin-bottom: -130px;}
+.submit-bg{position: absolute;background: url("img/icon_tip.png") no-repeat;width: 120px;height: 120px;left:50%;margin-left: -60px;top: -60px;}
+.Submit-wrap p{width: 80%;text-align: center;color: rgb( 51, 51, 51 );font-size: 20px;line-height: 30px;margin: auto}
+.Submit-wrap a{display:block;width: 140px;height: 40px;line-height: 40px;color: #fff;background: #51CDF0;border-radius: 5px;text-align: center;margin: 40px auto}
+/*----------
+   分享提示弹窗
+  ---------*/
+/*.share-tip-wrap{position: absolute;bottom:40%;width: 300px;margin: auto;border:4px dotted #fff;border-radius: 50%;padding: 10px 0;}*/
+.share-tip-wrap{position: absolute;top: 10%;width: 80%;margin-left: 10%;}
+.share-tip-wrap p{height: 30px;line-height: 30px;color: #fff;font-size: 20px;text-align: center;}
+.share-tip-content{background: url("img/icon_share.png") no-repeat;background-size: 100% 100%;padding: 85px 15px 25px 10px;margin-bottom:30px}
+.know span{margin: auto;border: 3px dotted #fff;color: #fff;padding: 2px 10px;display: block;height: 30px;line-height: 30px;
+    text-align: center;border-radius: 7px;font-size: 20px;}
+.know{background:#51CDF0;margin: auto;width: 140px;padding: 5px 8px;border-radius: 7px;cursor: pointer}
+/*----------
+   分享到微信、QQ弹窗
+  ---------*/
+.shareSelectPoP{background: #fff;position: absolute;bottom: 0;width: 100%;padding:30px 0; text-align: center}
+.share-list{background: url("img/icon_share_thirdParty.png") no-repeat;width: 30%;height: 30px;padding-top: 60px;color: rgb( 51, 51, 51 )}
+.share-QQ {background-position: 50% 0;}
+.share-WeCat{background-position: 50% -116px;}
+.share-Email{background-position: 50% -224px;}
