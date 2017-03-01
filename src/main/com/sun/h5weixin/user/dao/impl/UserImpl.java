@@ -7,6 +7,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by SUN on 2017/2/16.
@@ -103,6 +105,42 @@ public class UserImpl {
         {
             e.printStackTrace();
         }
+    }
+
+    public List<User> findUserListByPMobile(String pMobile)
+    {
+        List<User> userList = new ArrayList<User>();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+
+        Connection connection = ConnectionJdbc.connectionJdbc();
+        String sql = "select * from user where pMobile = ?";
+
+        try {
+            ps = connection.prepareStatement(sql);
+            ps.setString(1, pMobile);
+            rs = ps.executeQuery();
+            while (rs.next())
+            {
+                User user = new User();
+                user.setpMobile(pMobile);
+                user.setId(rs.getInt("id"));
+                user.setMobile(rs.getString("mobile"));
+                user.setCertificationStatus(rs.getString("certificationStatus"));
+                user.setAwardStatus(rs.getString("awardStatus"));
+                user.setInviteNumber(rs.getInt("inviteNumber"));
+                user.setAward(rs.getString("award"));
+                user.setProvince(rs.getString("province"));
+                user.setCity(rs.getString("city"));
+                user.setAwardTotal(rs.getString("awardTotal"));
+                userList.add(user);
+            }
+        }catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+
+        return userList;
     }
 
 }

@@ -3,6 +3,9 @@ package main.test;
 import main.com.sun.h5weixin.user.model.User;
 import main.com.sun.h5weixin.user.service.impl.UserServiceImpl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by SUN on 2017/2/16.
  */
@@ -18,8 +21,9 @@ public class testMain {
 //        UserServiceImpl userService = new UserServiceImpl();
 //        userService.addUser(user);
         testMain test = new testMain();
+        test.findUserListByPMobile();
 //        test.findUserByOpenid();
-        test.modifyUser();
+//        test.modifyUser();
 //        test.addUser();
 //        System.out.println("main:" + IsMobile.isMobileNo(""));
     }
@@ -32,6 +36,19 @@ public class testMain {
 
         UserServiceImpl userService = new UserServiceImpl();
         userService.addUser(user);
+    }
+
+    public void findUserListByPMobile()
+    {
+        List<User> userList = new ArrayList<User>();
+        String pMobile = "1";
+        UserServiceImpl userService = new UserServiceImpl();
+        userList = userService.findUserListByPMobile(pMobile);
+
+        for (int i = 0; i < userList.size(); i++)
+        {
+            System.out.println("mobile:" + userList.get(i).getMobile());
+        }
     }
 
     public void findUserByOpenid()
