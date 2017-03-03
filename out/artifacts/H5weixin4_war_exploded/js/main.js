@@ -81,31 +81,39 @@ $(function () {
                     "mobile":$("#mobile").val(),
                     "province":$("#province1  option:selected").text(),
                     "city":$("#city1  option:selected").text(),
-                    "pMobile":$("#pMobile").text()
+                    "pMobile":$("#pMobile").text(),
+                    "code":$("#code").val()
                 },
                 dataType:"json",
                 success:function (data) {
-                    if(data.success == 1)
+                    if(data.success == 1)//手机号未认证
                     {
-                        $("#register-PoP").fadeOut();
-                        $("#submitPoP").fadeIn(300);
-                        isOperate=1;//认证成功
-                        ID=$("#mobile").val();
-                        // window.location.href = "weixin?action=refresh&pMobile=" + data.mobile;
-                        $(".close").click(function () {
-                            window.location.href="weixin?action=refresh&pMobile=" + data.mobile;
-                        })
-
+                        if(data.code==1){//验证码正确
+                            $("#register-PoP").fadeOut();
+                            $("#submitPoP").fadeIn(300);
+                            isOperate=1;//认证成功
+                            ID=$("#mobile").val();
+                            // window.location.href = "weixin?action=refresh&pMobile=" + data.mobile;
+                            $(".close").click(function () {
+                                window.location.href="weixin?action=refresh&pMobile=" + data.mobile;
+                            })
+                        }
+                        else if(data.code==0){//验证码错误
+                            $("#error").html("验证码错误")
+                        }
                     }
-                    else  if(data.success==0)
+                    else  if(data.success==0)//手机号已认证
                     {
                         $("#error").html("该手机号已认证")
                     }
-                    else {$("#error").html("请求失败")}
+                    else {
+                        $("#error").html("请求失败")
+                    }
                 }
             })
         }
     });
+
 //提交区域
     $("#ProvinceSubmit").live("click",function () {
         if ($("#province2").val()=="")
@@ -147,63 +155,84 @@ $(function () {
                 url:"weixin?action=getUserInfoMobile",
                 data:{
                     "mobile":$("#mobile2").val(),
-                    "pMobile":$("#pMobile").text()
+                    "code":$("#code2").val()
                 },
                 dataType:"json",
                 success:function (data) {
                     if(data.success == 1 || data.success == 0)
                     {
-                        // window.location.href = "weixin?action=refresh2&pMobile=" + data.mobile;
-                        $("#invitation-PoP").fadeOut();
-                        isOperate=2;//已邀请
-                        ID=$("#mobile2").val();
-                        $("#share-tip-wrap").fadeIn(300);
-                        $("#know").click(function () {
-                            window.location.href = "weixin?action=refresh2&pMobile=" + data.mobile;
-                        });
+                        if(data.code== "1")//验证码正确
+                        {
+                            $("#invitation-PoP").fadeOut();
+                            isOperate=2;//已邀请
+                            ID=$("#mobile2").val();
+                            $("#share-tip-wrap").fadeIn(300);
+                            $("#know").click(function () {
+                                window.location.href = "weixin?action=refresh2&pMobile=" + data.mobile;
+                            });
+                        }
+                        else if(data.code== "0")//验证码错误
+                        {
+                            $(".error").html("验证码错误")
+                        }
                     }
-                    else {$("#error").html("请求失败")}
+                    else {
+                        $(".error").html("请求失败")
+                    }
                 }
             })
         }
     });
 
+
 //验证码按钮
+    //验证码按钮
     function send(me) {
-        var reg=/^1[34578]\d{9}$/;
+        var reg = /^1[34578]\d{9}$/;
         var mobile = $(me).parent().parent().find("input:eq(0)").val();
-        if(mobile==""||mobile=="null")
-        {
+        if (mobile == "" || mobile == "null") {
             $(".error").html("手机号不能为空");
         }
-        else if(!reg.test(mobile)){
+        else if (!reg.test(mobile)) {
             $(".error").html("请输入正确的手机号码");
         }
         else {
             $(".error").html("");
-            var countdown=60;
-            function settime() {
-                if (countdown == 0) {
-                    $(me).removeAttr("disabled");
-                    $(me).val("获取验证码");
-                    countdown = 60;
-                    return;
-                } else {
-                    $(me).attr("disabled", true);
-                    $(me).val("重新发送(" + countdown + ")");
-                    countdown--;
+            $.ajax({
+                type:"post",
+                url:"weixin?action=sendCode",
+                data:{
+                    "mobile":$(me).parent().parent().find($(".mobile")).val(),
+                },
+                dataType:"json",
+                success:function (result) {
+                    if(result == 1)
+                    {
+                        var countdown=60;
+                        function settime() {
+                            if (countdown == 0) {
+                                $(me).removeAttr("disabled");
+                                $(me).val("获取验证码");
+                                countdown = 60;
+                                return;
+                            } else {
+                                $(me).attr("disabled", true);
+                                $(me).val("重新发送(" + countdown + ")");
+                                countdown--;
+                            }
+                            setTimeout(settime,1000);
+                        }
+                        settime();
+                    }
                 }
-                setTimeout(settime,1000);
-            }
-            settime();
+            });
         }
     }
 
     $(".send").click(function () {
         send(this);
     })
-
-
+    
 //识别设备跳转下载APP页面
         $.ajax({
             type:"get",

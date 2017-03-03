@@ -1,5 +1,6 @@
 package main.test;
 
+import main.com.sun.h5weixin.common.SMSUtils;
 import main.com.sun.h5weixin.user.model.User;
 import main.com.sun.h5weixin.user.service.impl.UserServiceImpl;
 
@@ -21,11 +22,20 @@ public class testMain {
 //        UserServiceImpl userService = new UserServiceImpl();
 //        userService.addUser(user);
         testMain test = new testMain();
-        test.findUserListByPMobile();
+        test.smsSend();
+//        test.findUserListByPMobile();
 //        test.findUserByOpenid();
 //        test.modifyUser();
 //        test.addUser();
 //        System.out.println("main:" + IsMobile.isMobileNo(""));
+    }
+
+    public void smsSend()
+    {
+        String mobile = "18850705207";
+        String code = "000000";
+        SMSUtils smsUtils = new SMSUtils();
+        smsUtils.sendCheckCodeSMS(code, mobile);
     }
 
     public void addUser()

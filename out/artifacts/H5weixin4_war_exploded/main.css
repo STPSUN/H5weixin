@@ -26,7 +26,9 @@ main  .main-content{width: 75%;margin: auto;}
 .step-title{background: #009999;color: #fff;padding: 5px 10px;text-align: center;width: 140px;font-size: 16px;margin:10px auto 0 auto; }
 .step-content{line-height: 20px;height: 20px;font-size: 12px;margin: 15px 0 30px 0;color:  rgb( 102, 102, 102 );}
 .step-content span{color: #333333;font-size: 15px;height: 20px;margin-right: 10px;font-weight: 600;}
-.upload{font-size: 13px;width:80px;text-align: center;background:#DE5853;color: #fff;margin: auto;padding: 2px 0;}
+.upload{font-size: 13px;width:80px;text-align: center;background:#DE5853;color: #fff;margin: auto;padding: 2px 0;box-shadow: 5px 5px 1px #ccc;
+    -moz-box-shadow:5px 5px 1px #ccc;-webkit-box-shadow:5px 5px 1px #ccc;
+}
 .step1-icon,.step2-icon,.rule-icon{position: absolute;width: 40px;height: 40px;background: url("img/icon_small.png") no-repeat;top: 40%;}
 .step1-icon{left: -20px;}
 .step2{background: url("img/icon_dotted2.png") no-repeat;background-size: 100% 100%;position: relative;padding-right: 20px;}

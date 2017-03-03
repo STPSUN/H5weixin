@@ -6,6 +6,15 @@ package main.com.sun.h5weixin.common.model;
 public class Refresh {
     private int success;
     private String mobile;
+    private String code;
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
 
     public String getMobile() {
         return mobile;
