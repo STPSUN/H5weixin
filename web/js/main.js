@@ -105,13 +105,13 @@ $(function () {
         else {
             $.ajax({
                 type:"post",
-                url:"",//发送手机号
+                url:"weixin?action=sendCode",//发送手机号
                 data:{
-                      "mobile":$("#mobile"),
+                      "mobile":$("#mobile").val(),
                 },
                 dataType:"json",
-                success:function (success) {
-                    if(success)
+                success:function (result) {
+                    if(result == 1)
                     {
                         var countdown=60;
                         function settime() {
@@ -153,10 +153,6 @@ $(function () {
             else if(link==1)//iphone
             {
                 $("#downAPP").attr("href","https://www.pgyer.com/aShZ");
-            }
-            else if(link=3)//PC
-            {
-                window.location.href="";
             }
         }
     })

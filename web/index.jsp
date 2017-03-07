@@ -11,7 +11,7 @@
 </head>
 <body>
 <!--主页面begin-->
-<span>手机号码：</span><p id="ID"></p>
+<span>手机号码：</span><p id="ID">${pMobile}</p>
 <header>
     <picture>
         <source srcset="img/icon_banner@3X.jpg" media="(min-width:1000px)" />
@@ -86,8 +86,6 @@
             <li class="box-header"><span>累计收益</span><span>成功邀请</span></li>
             <li class="box-content" style="color:#FEEB89"><span id="totalMoney">0元</span><span id="totalPerson">0人</span></li>
             <li class="box-header" id="invitationList"><span>邀请账户</span><span>收益明细</span></li>
-            <li class="box-content"><span>'+obj.mobile+'</span><span>50元</span></li>
-            <li class="box-content" style="color: #530d0d"><span>'+obj.mobile+'</span><span>50元<i class="noAuth">未认证</i></span></li>
         </ul>
     </div>
 </footer>
@@ -111,7 +109,7 @@
 <!--提示下载APP弹窗begin-->
 <div class="PoP-wrap" id="submitPoP">
     <div class="Submit-wrap">
-        <i class="close"></i>
+        <i class="close" id="close"></i>
         <i class="submit-bg"></i>
         <p class="p1">资料提交成功</p>
         <p>请在APP里完成认证奖励</p>
@@ -143,5 +141,6 @@
     </div>
 </div>
 <!--分享成功弹窗end-->
+<%--<p id="pMobile" >${pMobile}</p>--%>
 </body>
 </html>

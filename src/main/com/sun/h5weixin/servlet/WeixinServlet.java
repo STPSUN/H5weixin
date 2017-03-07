@@ -179,20 +179,20 @@ public class WeixinServlet extends HttpServlet {
             request.setAttribute("pMobile", pMobile);
         }
 
-        int operate2 = 0;
-        HttpSession session = request.getSession();
+//        int operate2 = 0;
+//        HttpSession session = request.getSession();
 //        String sessionID = session.getId();
 //        String seesionValue = (String)session.getAttribute("operate2");
-        if(session.isNew())
-        {
-
-        }else
-        {
-            operate2 = 2;
-        }
+//        if(session.isNew())
+//        {
+//
+//        }else
+//        {
+//            operate2 = 2;
+//        }
 //        request.setAttribute("operate2", operate2);
 //        System.out.println(sessionID);
-        session.setAttribute("operate2", operate2);
+//        session.setAttribute("operate2", operate2);
         openType(request, response);
 //        request.getRequestDispatcher("index.jsp").forward(request, response);
     }

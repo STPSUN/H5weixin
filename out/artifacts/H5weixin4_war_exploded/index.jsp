@@ -1,22 +1,22 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+﻿<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1,width=device-width">
     <script src="js/jquery-1.8.3.min.js"></script>
-    <script src="js/ProvinceSelect.js"></script>
     <script src="js/main.js"></script>
     <link rel="stylesheet" href="main.css">
     <title>活动</title>
 </head>
 <body>
 <!--主页面begin-->
+<span>手机号码：</span><p id="ID">${pMobile}</p>
 <header>
     <picture>
-        <source srcset="../H5weixin4/img/icon_banner@3X.jpg" media="(min-width:1000px)" />
-        <source srcset="../H5weixin4/img/icon_banner@2X.jpg" media="(min-width:640px)" />
-        <img srcset="../H5weixin4/img/icon_banner@1X.jpg" alt="banner" />
+        <source srcset="img/icon_banner@3X.jpg" media="(min-width:1000px)" />
+        <source srcset="img/icon_banner@2X.jpg" media="(min-width:640px)" />
+        <img srcset="img/icon_banner@1X.jpg" alt="banner" />
     </picture>
 </header>
 <main>
@@ -24,7 +24,7 @@
         <div class="step step1">
             <div class="step-title a-fadeinL">上传证书领红包</div>
             <div class="step-content"><span>认证有奖</span>注册并上传工程师相关证书可领取红包奖励</div>
-            <div class="upload a-fadeinL" id="upload">立即上传</div>
+            <div class="upload a-fadeinL" id="upload">立即认证</div>
             <div class="step1-icon a-fadeinL"></div>
         </div>
         <div class="step step2">
@@ -91,68 +91,32 @@
 </footer>
 <!--主页面end-->
 
-<!--手机和区域填写弹窗begin-->
-<div class="PoP-wrap" id="register-PoP">
-    <div class="register-PoP">
-        <i class="close" id="close"></i>
-        <div class="register-content">
-            <div class="register-title">— 资料填写 —</div>
-            <div class="register-item phone clearfix"><i></i><input type="text" placeholder="请输入手机号" id="mobile" class="mobile"></div>
-            <div class="register-item code clearfix"><i></i><input type="text" placeholder="请输入验证码" id="code" class="code-text"><input type="button" id="send" class="send" value="发送验证码"></div>
-            <div class="register-item clearfix select-list location-wrap">
-                <i></i>
-                <div class="location"><select name="P1" id="province1"></select><select name="C1" id="city1"></select></div>
-            </div>
-            <div class="error" id="error"></div>
-        </div>
-        <input type="submit" value="提交" class="submit" id="registerSubmit">
-    </div>
-</div>
-<!--手机和区域填写弹窗end-->
-
-<!--仅区域填写弹窗begin-->
-<div class="PoP-wrap" id="Province-PoP">
-    <div class="register-PoP">
-        <i class="close"></i>
-        <div class="register-content">
-            <div class="register-title">— 请选择区域 —</div>
-            <div class="register-item clearfix select-list location-wrap" style="padding-bottom: 20px">
-                <i></i>
-                <div class="location"><select name="P2" id="province2"></select><select name="C2" id="city2"></select></div>
-            </div>
-            <div class="error" id="error3"></div>
-        </div>
-        <input type="submit" value="提交" class="submit" id="ProvinceSubmit">
-    </div>
-</div>
-<!--仅区域填写弹窗end-->
-
-<!--仅手机填写弹窗begin-->
-<div class="PoP-wrap" id="invitation-PoP">
+<!--手机填写弹窗begin-->
+<div class="PoP-wrap" id="form-PoP">
     <div class="register-PoP">
         <i class="close"></i>
         <div class="register-content">
             <div class="register-title">— 信息确认 —</div>
-            <div class="register-item phone clearfix"><i></i><input type="text" placeholder="请输入手机号" id="mobile2" class="mobile"></div>
-            <div class="register-item code clearfix"><i></i><input type="text" placeholder="请输入验证码" id="code2" class="code-text"><input type="button" id="send2" class="send" value="发送验证码"></div>
-            <div class="error" id="error2"></div>
+            <div class="register-item phone clearfix"><i></i><input type="text" placeholder="请输入手机号" id="mobile" class="mobile"></div>
+            <div class="register-item code clearfix"><i></i><input type="text" placeholder="请输入验证码" id="code" class="code-text"><input type="button" id="send" class="send" value="发送验证码"></div>
+            <div class="error" id="error"></div>
         </div>
-        <input type="submit" value="提交" class="submit" id="invitationSubmit">
+        <input type="submit" value="提交" class="submit" id="submit">
     </div>
 </div>
-<!--仅手机填写弹窗end-->
+<!--手机填写弹窗end-->
 
-<!--资料提交成功弹窗begin-->
+<!--提示下载APP弹窗begin-->
 <div class="PoP-wrap" id="submitPoP">
     <div class="Submit-wrap">
-        <i class="close"></i>
+        <i class="close" id="close"></i>
         <i class="submit-bg"></i>
         <p class="p1">资料提交成功</p>
         <p>请在APP里完成认证奖励</p>
         <a href="javascript:void(0)" id="downAPP">下载APP</a>
     </div>
 </div>
-<!--资料提交成功弹窗end-->
+<!--提示下载APP弹窗end-->
 
 <!--分享提示弹窗begin-->
 <div class="PoP-wrap" id="share-tip-wrap">
@@ -177,25 +141,6 @@
     </div>
 </div>
 <!--分享成功弹窗end-->
-
-<!--分享到第三方弹窗begin-->
-<div class="PoP-wrap" id="shareSelectPoP" >
-    <div class="shareSelectPoP">
-        <a class="share-list share-QQ" href="javascript:void (0)">QQ分享</a>
-        <a class="share-list share-WeCat" href="javascript:void (0)">微信分享</a>
-        <a class="share-list share-Email" href="javascript:void (0)">短信分享</a>
-    </div>
-</div>
-<!--分享到第三方弹窗end-->
-
-<!--请不要重复弹窗begin-->
-<div class="noRepeat" id="noRepeat">请不要重复认证</div>
-
-<!--判断是否跳转到新页面-->
-<p id="refresh" style="display: none">${operate}</p>
-<p id="refresh2" style="display: none">${operate2}</p>
-
-<!--获取pMobile-->
-<p id="pMobile" style="display: none">${pMobile}</p>
+<%--<p id="pMobile" >${pMobile}</p>--%>
 </body>
 </html>
