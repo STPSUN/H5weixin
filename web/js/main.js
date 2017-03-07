@@ -17,7 +17,7 @@ $(function () {
 
 // //立即上传
     $("#upload").click(function () {
-        if($("#ID").val()==""||$("#ID").val()==null)//资料未填写
+        if($("#ID").text()==""||$("#ID").text()==null)//资料未填写
         {
             $("#form-PoP").fadeIn(300);
         }
@@ -33,7 +33,7 @@ $(function () {
 
 // //立即邀请
     $("#upload2").click(function (){
-        if($("#ID").val()==""||$("#ID").val()==null)//资料未填写
+        if($("#ID").text()==""||$("#ID").text()==null)//资料未填写
         {
             $("#form-PoP").fadeIn(300);
         }

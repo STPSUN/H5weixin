@@ -13,7 +13,7 @@
 </head>
 <body>
 <!--主页面begin-->
-<p id="ID"><span>手机号码：</span></p>
+<span>手机号码：</span><p id="ID">111</p>
 <header>
     <picture>
         <source srcset="img/icon_banner@3X.jpg" media="(min-width:1000px)" />
@@ -150,12 +150,12 @@
 <!--请不要重复弹窗begin-->
 <div class="noRepeat" id="noRepeat">请不要重复认证</div>
 
-<!--判断是否跳转到新页面-->
-<p id="refresh1" style="display: none">${operate}</p>
-<p id="refresh2" style="display: none">${operate2}</p>
+<%--<!--判断是否跳转到新页面-->--%>
+<%--<p id="refresh1" style="display: none">${operate}</p>--%>
+<%--<p id="refresh2" style="display: none">${operate2}</p>--%>
 
-<!--获取pMobile-->
-<p id="pMobile" style="display: none">${pMobile}</p>
+<%--<!--获取pMobile-->--%>
+<%--<p id="pMobile" style="display: none">${pMobile}</p>--%>
 
 <script>
 </script>
