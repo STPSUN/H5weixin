@@ -11,13 +11,16 @@
 </head>
 <body>
 <!--主页面begin-->
-<span>手机号码：</span><p id="ID">${pMobile}</p>
 <header>
     <picture>
         <source srcset="img/icon_banner@3X.jpg" media="(min-width:1000px)" />
         <source srcset="img/icon_banner@2X.jpg" media="(min-width:640px)" />
         <img srcset="img/icon_banner@1X.jpg" alt="banner" />
     </picture>
+    <div class="header-bottom">
+        <div class="ID-mobile" id="ID-mobile">当前分享号码：<span id="ID">${pMobile}</span><i>注销</i></div>
+        <div class="get-ewm" id="get-ewm">获取公众号二维码</div>
+    </div>
 </header>
 <main>
     <div class="main-content">
@@ -141,6 +144,18 @@
     </div>
 </div>
 <!--分享成功弹窗end-->
-<%--<p id="pMobile" >${pMobile}</p>--%>
+
+<!--公众号二维码弹窗begin-->
+<div class="PoP-wrap" id="weChat-PoP" style="display: none">
+    <div class="weChat-wrap">
+        <i class="close2"></i>
+        <div class="ewmPic"><img src="img/wechat.JPG" alt="二维码"><i class="icon_redTip"></i></div>
+        <div class="tips"><p>扫码关注微信公众号</p><p>领取红包奖励</p></div>
+        <div class="savePic">保存二维码到手机</div>
+    </div>
+</div>
+<!--公众号二维码弹窗begin-->
 </body>
+<script>
+</script>
 </html>

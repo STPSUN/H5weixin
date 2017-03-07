@@ -1,4 +1,4 @@
-/*----------
+﻿/*----------
     初始化
   ---------*/
 *{padding: 0;margin: 0;border:0;}
@@ -14,7 +14,16 @@ input[type=button], input[type=submit], input[type=file], button{cursor: pointer
    header
   ---------*/
 header{font-size: 0;}
-header img{width: 100%;}
+header img{width: 100%;font-size: 0;}
+.header-bottom{display: flex;justify-content: space-around;font-size: 12px;flex-flow:wrap;background:#d5f1f2;padding: 10px}
+.ID-mobile,.get-ewm,.ID-mobile i{display: flex;align-self: center;}
+.ID-mobile:before{background: url("img/icon_mobile.png") no-repeat;content: '';width: 45px;height: 30px;display: inline-block;
+    margin-right: 10px}
+.ID-mobile{margin-right: 10px;color: rgb( 51, 51, 51 );font-weight: bold;height: 30px;padding: 5px 0;line-height: 30px;}
+.ID-mobile i{color:  rgb( 255, 144, 0 );padding: 2px 4px;border: 1px solid  rgb( 255, 144, 0 );font-weight: 100;
+    font-style: normal;line-height: 12px;margin-left: 10px;height: 12px}
+.get-ewm{color: #fff;background:#DD5954;padding: 3px 8px;box-shadow: 3px 3px 1px #A00019;  -moz-box-shadow:3px 3px 1px #A00019;
+    -webkit-box-shadow:3px 3px 1px #A00019;}
 /*----------
    main
   ---------*/
@@ -102,6 +111,19 @@ option{background:rgb( 211, 242, 251 );}
 .know span{margin: auto;border: 3px dotted #fff;color: #fff;padding: 2px 10px;display: block;height: 30px;line-height: 30px;
     text-align: center;border-radius: 7px;font-size: 20px;}
 .know{background:#51CDF0;margin: auto;width: 140px;padding: 5px 8px;border-radius: 7px;cursor: pointer}
+/*----------
+  微信二维码弹窗
+  ---------*/
+.weChat-wrap{position: absolute;top: 50%;left:50%;margin-top:-150px;margin-left: -120px;text-align: center}
+.close2{background: url("img/icon_close2.png") no-repeat;width: 45px;height: 45px;position: absolute;bottom: 95%;right: -10%}
+.ewmPic{position: relative}
+.ewmPic img{width: 150px;height: 150px;padding:10px;background:#51CCEF;border-radius: 22px;}
+.tips{color:rgb( 51, 51, 51 );text-align: center;background:#fff;width: 240px;padding-top: 30px;padding-bottom: 10px;border-radius: 5px;}
+.tips p{height: 20px;line-height: 20px;font-size: 13px;color: rgb( 51, 51, 51 );}
+.icon_redTip{background: url("img/icon_redTip.png") no-repeat;width:260px;height: 60px;background-size:100%;position: absolute;
+    bottom: -33px;right: 50%;margin-right: -130px;}
+.savePic{width: 240px;margin-top: 10px;color: #fff;background:#51CCEF;text-align: center;border-radius: 5px;font-size: 16px;
+    height: 40px;line-height: 40px;}
 /*----------
    animation
   ---------*/

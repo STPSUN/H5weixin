@@ -1,4 +1,4 @@
-$(function () {
+﻿$(function () {
 
     var order=null;
 //首页规则内容
@@ -15,6 +15,15 @@ $(function () {
         $("#btn-down-wrap").css("display","block");
     });
 
+//注销
+    $("#ID-mobile i").click(function () {
+        $("#ID").text("");
+    });
+
+//微信二维码弹窗
+    $("#get-ewm").click(function () {
+        $("#weChat-PoP").fadeIn(300);
+    })
 
 // //立即上传
     $("#upload").click(function () {
