@@ -2,7 +2,7 @@
     初始化
   ---------*/
 *{padding: 0;margin: 0;border:0;}
-html,body{font-family: HiraginoSans,"Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif;color: #333; width: 100%;overflow-x: hidden;}
+html,body{font-family: HiraginoSans,"Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif;color: #333;width: 100%;overflow-x: hidden;}
 .clearfix:after{content: "";display: block;clear: both}
 i{display: inline-block;}
 ul,li{list-style-type: none}
@@ -27,8 +27,7 @@ main  .main-content{width: 75%;margin: auto;}
 .step-content{line-height: 20px;height: 20px;font-size: 12px;margin: 15px 0 30px 0;color:  rgb( 102, 102, 102 );}
 .step-content span{color: #333333;font-size: 15px;height: 20px;margin-right: 10px;font-weight: 600;}
 .upload{font-size: 13px;width:80px;text-align: center;background:#DE5853;color: #fff;margin: auto;padding: 2px 0;box-shadow: 5px 5px 1px #ccc;
-    -moz-box-shadow:5px 5px 1px #ccc;-webkit-box-shadow:5px 5px 1px #ccc;
-}
+    -moz-box-shadow:5px 5px 1px #ccc;-webkit-box-shadow:5px 5px 1px #ccc;}
 .step1-icon,.step2-icon,.rule-icon{position: absolute;width: 40px;height: 40px;background: url("img/icon_small.png") no-repeat;top: 40%;}
 .step1-icon{left: -20px;}
 .step2{background: url("img/icon_dotted2.png") no-repeat;background-size: 100% 100%;position: relative;padding-right: 20px;}
@@ -85,8 +84,6 @@ option{background:rgb( 211, 242, 251 );}
 .submit{width: 100%;background:#51CDF0;color: #fff;font-size: 18px;text-align: center;border-radius: 8px;height: 50px;line-height: 50px; }
 .close{position: absolute;top:-49px;right: 20px;display: block;width: 50px;height: 50px;background: url("img/icon_close.png") no-repeat;cursor: pointer;}
 .error{height: 50px;line-height: 50px;color: red;text-align: center;font-size: 14px;}
-.noRepeat{background: rgba(0,0,0,0.8);width: 200px;line-height: 40px;color: #fff;font-size: 15px;z-index: 666;position: fixed;top: 40%;
-    left: 50%;text-align: center;margin-left: -100px;display: none}
 
 /*----------
    资料提交成功弹窗
@@ -105,14 +102,6 @@ option{background:rgb( 211, 242, 251 );}
 .know span{margin: auto;border: 3px dotted #fff;color: #fff;padding: 2px 10px;display: block;height: 30px;line-height: 30px;
     text-align: center;border-radius: 7px;font-size: 20px;}
 .know{background:#51CDF0;margin: auto;width: 140px;padding: 5px 8px;border-radius: 7px;cursor: pointer}
-/*----------
-   分享到微信、QQ弹窗
-  ---------*/
-.shareSelectPoP{background: #fff;position: absolute;bottom: 0;width: 100%;padding:30px 0; text-align: center}
-.share-list{background: url("img/icon_share_thirdParty.png") no-repeat;width: 30%;height: 30px;padding-top: 60px;color: rgb( 51, 51, 51 )}
-.share-QQ {background-position: 50% 0;}
-.share-WeCat{background-position: 50% -116px;}
-.share-Email{background-position: 50% -224px;}
 /*----------
    animation
   ---------*/

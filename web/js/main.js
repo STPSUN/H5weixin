@@ -1,5 +1,6 @@
 $(function () {
 
+    var order=null;
 //首页规则内容
     $("#btn-down").click(function () {
         $("#rule-turn").removeClass("rule-part1-less");
@@ -17,29 +18,14 @@ $(function () {
 
 // //立即上传
     $("#upload").click(function () {
-        if($("#ID").text()==""||$("#ID").text()==null)//资料未填写
-        {
             $("#form-PoP").fadeIn(300);
-        }
-        else  //资料已填写
-        {
-            $("#noRepeat").css("display","block");
-            setTimeout(show,1000);
-            function show() {
-                $("#noRepeat").fadeOut();
-            }
-        }
+            var order=1;
     })
 
 // //立即邀请
     $("#upload2").click(function (){
-        if($("#ID").text()==""||$("#ID").text()==null)//资料未填写
-        {
             $("#form-PoP").fadeIn(300);
-        }
-        else{//资料已填写
-            $("#share-tip-wrap").fadeIn(300);
-        }
+            var order=2;
     });
 
 //关闭
@@ -71,12 +57,23 @@ $(function () {
                     {
                         if(data.code==1)//验证码正确
                         {
-                            $("#form-PoP").fadeOut();
-                            $("#share-tip-wrap").fadeIn(300);
-                            $("#know").click(function () {
-                                window.location.href = "weixin?action=refresh2&pMobile=" + data.mobile;
-                                $("#ID").val(data.mobile);//获取后台传回来的手机号
-                            });
+                            if(order=1){//立即认证按钮
+                                $("#form-PoP").fadeOut();
+                                $("#submitPoP").fadeIn(300);
+                                $("#close").click(function () {
+                                    window.location.href = "weixin?action=refresh2&pMobile=" + data.mobile;
+                                    $("#ID").val(data.mobile);//获取后台传回来的手机号
+                                });
+                            }
+                            else if(order=2)//立即邀请按钮
+                            {
+                                $("#form-PoP").fadeOut();
+                                $("#share-tip-wrap").fadeIn(300);
+                                $("#know").click(function () {
+                                    window.location.href = "weixin?action=refresh2&pMobile=" + data.mobile;
+                                    $("#ID").val(data.mobile);//获取后台传回来的手机号
+                                });
+                            }
                         }
                         else if(data.code==0)//验证码错误
                         {
@@ -100,6 +97,10 @@ $(function () {
         }
         else if (!reg.test(mobile)) {
             $("#error").html("请输入正确的手机号码");
+        }
+        else if($("#ID").text()==$("#mobile").val())
+        {
+            $("#error").html("该手机号已认证");
         }
         else {
             $.ajax({
@@ -197,18 +198,4 @@ $(function () {
             }
         },
     })
-
-    //填写信息后跳转到新页面并绑定手机号
-    //
-    // if($("#refresh").html()==1)
-    // {
-    //     $("#register-PoP").fadeOut();
-    //     isOperate=1;//认证成功
-    //     ID=$("#mobile").val();
-    // }else if($("#refresh2").html()==2)
-    // {
-    //     $("#form-PoP").fadeOut();
-    //     isOperate=2;//邀请确认信息填写成功
-    //     ID=$("#mobile").val();
-    // }
 })

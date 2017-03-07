@@ -1,19 +1,17 @@
 ﻿<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1,width=device-width">
     <script src="js/jquery-1.8.3.min.js"></script>
-    <!--<script src="js/ProvinceSelect.js"></script>-->
     <script src="js/main.js"></script>
     <link rel="stylesheet" href="main.css">
     <title>活动</title>
 </head>
 <body>
 <!--主页面begin-->
-<span>手机号码：</span><p id="ID">111</p>
+<span>手机号码：</span><p id="ID"></p>
 <header>
     <picture>
         <source srcset="img/icon_banner@3X.jpg" media="(min-width:1000px)" />
@@ -26,7 +24,7 @@
         <div class="step step1">
             <div class="step-title a-fadeinL">上传证书领红包</div>
             <div class="step-content"><span>认证有奖</span>注册并上传工程师相关证书可领取红包奖励</div>
-            <div class="upload a-fadeinL" id="upload">立即上传</div>
+            <div class="upload a-fadeinL" id="upload">立即认证</div>
             <div class="step1-icon a-fadeinL"></div>
         </div>
         <div class="step step2">
@@ -110,7 +108,7 @@
 </div>
 <!--手机填写弹窗end-->
 
-<!--资料提交成功弹窗begin-->
+<!--提示下载APP弹窗begin-->
 <div class="PoP-wrap" id="submitPoP">
     <div class="Submit-wrap">
         <i class="close"></i>
@@ -120,7 +118,7 @@
         <a href="javascript:void(0)" id="downAPP">下载APP</a>
     </div>
 </div>
-<!--资料提交成功弹窗end-->
+<!--提示下载APP弹窗end-->
 
 <!--分享提示弹窗begin-->
 <div class="PoP-wrap" id="share-tip-wrap">
@@ -145,19 +143,5 @@
     </div>
 </div>
 <!--分享成功弹窗end-->
-
-
-<!--请不要重复弹窗begin-->
-<div class="noRepeat" id="noRepeat">请不要重复认证</div>
-
-<%--<!--判断是否跳转到新页面-->--%>
-<%--<p id="refresh1" style="display: none">${operate}</p>--%>
-<%--<p id="refresh2" style="display: none">${operate2}</p>--%>
-
-<%--<!--获取pMobile-->--%>
-<%--<p id="pMobile" style="display: none">${pMobile}</p>--%>
-
-<script>
-</script>
 </body>
 </html>
