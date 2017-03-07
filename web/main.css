@@ -118,7 +118,7 @@ option{background:rgb( 211, 242, 251 );}
 .close2{background: url("img/icon_close2.png") no-repeat;width: 45px;height: 45px;position: absolute;bottom: 95%;right: -10%}
 .ewmPic{position: relative}
 .ewmPic img{width: 150px;height: 150px;padding:10px;background:#51CCEF;border-radius: 22px;}
-.tips{color:rgb( 51, 51, 51 );text-align: center;background:#fff;width: 240px;padding-top: 30px;padding-bottom: 10px;border-radius: 5px;}
+.tips{color:rgb( 51, 51, 51 );text-align: center;background:#fff;width: 239px;padding-top: 30px;padding-bottom: 10px;border-radius: 5px;}
 .tips p{height: 20px;line-height: 20px;font-size: 13px;color: rgb( 51, 51, 51 );}
 .icon_redTip{background: url("img/icon_redTip.png") no-repeat;width:260px;height: 60px;background-size:100%;position: absolute;
     bottom: -33px;right: 50%;margin-right: -130px;}
